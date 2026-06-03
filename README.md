@@ -23,12 +23,24 @@ Pi package discovery is still young. The platform is designed for exactly this: 
   - adds `/zen [on|off]`
   - adds `ctrl+shift+z` toggle
 - `themes/oh-my-pi-dark.json` — first-pass dark theme.
+- `extensions/finder.ts` — `/finder`, `/finder-deep`, and `/finder-local` commands that launch async evidence-backed research through `pi-subagents`.
+- `prompts/find.md` — `/find <question>` prompt-template variant of the finder workflow.
+- `skills/finder/SKILL.md` — ambient finder workflow guidance for background research runs you can status/resume.
+- `agents/finder.md` — source copy of the intended `oh-my-pi.finder` subagent profile; currently a package convention until `pi-subagents` discovers agents from Pi packages.
 
 ## Try it without installing
 
 ```sh
 cd ../oh-my-pi
-pi --extension ./extensions/zen-shell.ts --theme ./themes/oh-my-pi-dark.json
+pi -e ./ --theme ./themes/oh-my-pi-dark.json
+```
+
+Then try:
+
+```text
+/finder what does Warp publicly reveal about its agent harness?
+/finder deep what is Flue and should this repo use it?
+/finder local how should finder be packaged in this repo?
 ```
 
 ## Install as a local Pi package
@@ -60,6 +72,7 @@ This works inside Pi's built-in interactive TUI:
 - cleaner tool output rendering
 - model/thinking/session indicators
 - prompt/theme/skill bundles
+- async finder/research workflows built on `pi-subagents` (`/finder`, `/find`, `researcher`, `scout`, status/resume)
 
 This package starts here.
 
